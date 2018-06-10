@@ -1,0 +1,8 @@
+<RCC>
+  <qresource prefix="label">
+    <file>circle_bg3.png</file>
+  </qresource>
+  <qresource prefix="background">
+    <file>background.jpg</file>
+  </qresource>
+</RCC>
