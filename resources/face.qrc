@@ -1,6 +1,12 @@
 <RCC>
   <qresource prefix="label">
-    <file>circle_bg3.png</file>
+    <file>transparent.jpg</file>
+  </qresource>
+  <qresource prefix="imageView">
+    <file>face.jpg</file>
+  </qresource>
+  <qresource prefix="icon">
+    <file>android.ico</file>
   </qresource>
   <qresource prefix="background">
     <file>background.jpg</file>

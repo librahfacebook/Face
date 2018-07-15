@@ -7,11 +7,15 @@
     <x>0</x>
     <y>0</y>
     <width>764</width>
-    <height>579</height>
+    <height>596</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>人脸识别打卡系统</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="../resources/face.qrc">
+    <normaloff>:/icon/android.ico</normaloff>:/icon/android.ico</iconset>
   </property>
   <property name="autoFillBackground">
    <bool>false</bool>
@@ -24,7 +28,7 @@
     <property name="geometry">
      <rect>
       <x>230</x>
-      <y>0</y>
+      <y>10</y>
       <width>281</width>
       <height>51</height>
      </rect>
@@ -39,27 +43,219 @@
      <bool>false</bool>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-image: url(:/label/circle_bg3.png);</string>
+     <string notr="true">background-image: url(:/label/transparent.jpg);</string>
     </property>
     <property name="text">
      <string>人脸识别打卡系统</string>
     </property>
    </widget>
+   <widget class="QLabel" name="faceView">
+    <property name="geometry">
+     <rect>
+      <x>60</x>
+      <y>190</y>
+      <width>291</width>
+      <height>221</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-image: url(:/imageView/face.jpg);</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="infoLabel">
+    <property name="geometry">
+     <rect>
+      <x>80</x>
+      <y>430</y>
+      <width>261</width>
+      <height>61</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>华文彩云</family>
+      <pointsize>20</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-image: url(:/label/transparent.jpg);</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QWidget" name="verticalLayoutWidget">
+    <property name="geometry">
+     <rect>
+      <x>520</x>
+      <y>190</y>
+      <width>141</width>
+      <height>221</height>
+     </rect>
+    </property>
+    <layout class="QVBoxLayout" name="verticalLayout">
+     <item>
+      <widget class="QPushButton" name="admainButton">
+       <property name="font">
+        <font>
+         <family>宋体</family>
+         <pointsize>11</pointsize>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-image: url(:/label/transparent.jpg);</string>
+       </property>
+       <property name="text">
+        <string>用户管理</string>
+       </property>
+       <property name="icon">
+        <iconset resource="../resources/face.qrc">
+         <normaloff>:/icon/android.ico</normaloff>:/icon/android.ico</iconset>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="cameraButton">
+       <property name="font">
+        <font>
+         <family>宋体</family>
+         <pointsize>11</pointsize>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-image: url(:/label/transparent.jpg);</string>
+       </property>
+       <property name="text">
+        <string>人脸识别</string>
+       </property>
+       <property name="icon">
+        <iconset resource="../resources/face.qrc">
+         <normaloff>:/icon/android.ico</normaloff>:/icon/android.ico</iconset>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="ImageButton">
+       <property name="font">
+        <font>
+         <family>宋体</family>
+         <pointsize>11</pointsize>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-image: url(:/label/transparent.jpg);</string>
+       </property>
+       <property name="text">
+        <string>人脸匹配</string>
+       </property>
+       <property name="icon">
+        <iconset resource="../resources/face.qrc">
+         <normaloff>:/icon/android.ico</normaloff>:/icon/android.ico</iconset>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="statisButton">
+       <property name="font">
+        <font>
+         <family>宋体</family>
+         <pointsize>11</pointsize>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-image: url(:/label/transparent.jpg);</string>
+       </property>
+       <property name="text">
+        <string>打卡统计</string>
+       </property>
+       <property name="icon">
+        <iconset resource="../resources/face.qrc">
+         <normaloff>:/icon/android.ico</normaloff>:/icon/android.ico</iconset>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
   </widget>
-  <widget class="QMenuBar" name="menubar">
-   <property name="geometry">
-    <rect>
-     <x>0</x>
-     <y>0</y>
-     <width>764</width>
-     <height>23</height>
-    </rect>
-   </property>
-  </widget>
-  <widget class="QStatusBar" name="statusbar"/>
  </widget>
  <resources>
-  <include location="resources/face.qrc"/>
+  <include location="../resources/face.qrc"/>
  </resources>
- <connections/>
+ <connections>
+  <connection>
+   <sender>ImageButton</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>showFace()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>648</x>
+     <y>300</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>700</x>
+     <y>312</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>cameraButton</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>showCamera()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>616</x>
+     <y>260</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>516</x>
+     <y>287</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>admainButton</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>showAdmain()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>595</x>
+     <y>154</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>381</x>
+     <y>297</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>statisButton</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>showStatis()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>575</x>
+     <y>361</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>381</x>
+     <y>297</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>showCamera()</slot>
+  <slot>showFace()</slot>
+  <slot>showAdmain()</slot>
+  <slot>showStatis()</slot>
+ </slots>
 </ui>
