@@ -33,7 +33,6 @@ def gface(image):
 # 打开摄像头进行人脸检测
 def faceCapture(name):
     cap = cv2.VideoCapture(0)  # 从摄像头中取得视频
-    dir = 'face//'
     # 获取视频播放界面长宽
     # width = int(cap.get(cv2.CAP_PROP_FRAME_WIDTH) + 0.5)
     # height = int(cap.get(cv2.CAP_PROP_FRAME_HEIGHT) + 0.5)
@@ -54,7 +53,7 @@ def faceCapture(name):
                         face = frame[y1:y2, x1:x2]
                     print(name)
                     # cv2.imwrite(dir + name + '.jpg', face)
-                    cv2.imencode('.jpg', face)[1].tofile(dir + name + '.jpg')
+                    cv2.imencode('.jpg', face)[1].tofile( name + '.jpg')
                     break
                 elif k == ord('q'):
                     break

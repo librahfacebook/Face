@@ -9,7 +9,7 @@ import numpy as np
 import sys, os, face_recognition, time
 import matplotlib.pyplot as plt
 
-
+dir='C:\\Users\\libra\\PycharmProjects\\Face\\face\\'
 class AdmainWindow(QtWidgets.QDialog, Ui_admainDialog):
     def __init__(self):
         super(AdmainWindow, self).__init__()
@@ -17,8 +17,9 @@ class AdmainWindow(QtWidgets.QDialog, Ui_admainDialog):
 
     def takePhoto(self):
         name = self.nameEdit.text()
+        os.chdir(dir)
+        print(os.getcwd())
         if name != "":
-            dir = 'face//'
             if not os.path.exists(dir):
                 os.mkdir(dir)
             faceCapture(name)
@@ -54,18 +55,15 @@ class Mywindow(QtWidgets.QMainWindow, Ui_MainWindow):
 
     def showCamera(self):
         if self.cameraButton.clicked:
+            os.chdir(dir)
             faceCapture('None')
-            os.chdir('face//')
             face = QtGui.QPixmap('None.jpg').scaled(115, 120)
             self.faceView.setAlignment(Qt.AlignCenter)
             self.faceView.setPixmap(face)
 
     def showFace(self):
         if self.ImageButton.clicked:
-            # os.chdir('face//')
-            # face = QtGui.QPixmap('None.jpg').scaled(115, 120)
-            # self.faceView.setAlignment(Qt.AlignCenter)
-            # self.faceView.setPixmap(face)
+            os.chdir(dir)
             info = faceRecognize()
             if info != False:
                 self.infoLabel.setText("打卡成功！" + info)
@@ -164,5 +162,5 @@ if __name__ == '__main__':
     window.show()
     app.exec_()
     # 每天零点定时更新数据库
-    timerRun(21, 45)
+    timerRun(0, 0)
     sys.exit(0)
